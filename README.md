@@ -95,4 +95,4 @@ for i in $(seq 4); do ./client <IP_DO_SERVIDOR> 5000 --bench 10 & done; wait
 | `bench_client.c/.h` | Imperative Shell do ClienteBenchmark |
 | `tests/test_bench_core.c` | Testes unitários do núcleo |
 | `run_bench.sh` | Experimento de 1 a N clientes |
-| `SPEC.md` | Escopo, critérios de aceite, design e tarefas |
+| `Especificacao.md` | Escopo, critérios de aceite, design e tarefas |

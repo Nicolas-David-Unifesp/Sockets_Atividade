@@ -283,7 +283,7 @@ int main(int argc, char *argv[]) {
     signal(SIGPIPE, SIG_IGN);
 
     if (cfg.value.bench)
-        return bench_server_run(&cfg.value);
+        return bench_server_run(&cfg.value);//Aplicar para o servidor de benchmark, caso o argumento --bench seja passado.
 
     return run_chat_server(cfg.value.port);
 }

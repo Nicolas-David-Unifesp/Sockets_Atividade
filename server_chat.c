@@ -10,6 +10,9 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 
+#include "bench_core.h"
+#include "bench_server.h"
+
 #define BUFFER_SIZE 1024
 #define MAX_CLIENTS 100
 
@@ -184,18 +187,9 @@ void *handle_client(void *arg) {
     return NULL;
 }
 
-int main(int argc, char *argv[]) {
+static int run_chat_server(int port) {
     int server_fd;
     struct sockaddr_in server_addr;
-
-    if (argc != 2) {
-        fprintf(stderr, "Uso: %s <porta>\n", argv[0]);
-        return EXIT_FAILURE;
-    }
-
-    int port = atoi(argv[1]);
-
-    signal(SIGPIPE, SIG_IGN);
 
     server_fd = socket(AF_INET, SOCK_STREAM, 0);
 
@@ -275,4 +269,21 @@ int main(int argc, char *argv[]) {
     pthread_mutex_destroy(&clients_mutex);
 
     return EXIT_SUCCESS;
+}
+
+int main(int argc, char *argv[]) {
+    ServerConfigResult cfg = bench_parse_server_args(argc, argv);
+
+    if (cfg.error != BENCH_OK) {
+        fprintf(stderr, "Uso: %s <porta> [--bench <n_clientes> [rcvbuf]]\n",
+                argv[0]);
+        return EXIT_FAILURE;
+    }
+
+    signal(SIGPIPE, SIG_IGN);
+
+    if (cfg.value.bench)
+        return bench_server_run(&cfg.value);
+
+    return run_chat_server(cfg.value.port);
 }

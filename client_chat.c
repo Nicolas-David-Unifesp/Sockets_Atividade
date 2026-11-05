@@ -10,6 +10,9 @@
 #include <arpa/inet.h>
 #include <netinet/in.h>
 
+#include "bench_core.h"
+#include "bench_client.h"
+
 #define BUFFER_SIZE 1024
 
 int sockfd;
@@ -83,20 +86,11 @@ void *receive_messages(void *arg) {
     return NULL;
 }
 
-int main(int argc, char *argv[]) {
+static int run_chat_client(const char *ip, int port) {
     struct sockaddr_in server_addr;
     char name[32];
     char buffer[BUFFER_SIZE];
     pthread_t receiver;
-
-    if (argc != 3) {
-        fprintf(stderr, "Uso: %s <IP> <porta>\n", argv[0]);
-        return EXIT_FAILURE;
-    }
-
-    int port = atoi(argv[2]);
-
-    signal(SIGPIPE, SIG_IGN);
 
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
 
@@ -109,7 +103,7 @@ int main(int argc, char *argv[]) {
     server_addr.sin_family = AF_INET;
     server_addr.sin_port = htons(port);
 
-    if (inet_pton(AF_INET, argv[1],
+    if (inet_pton(AF_INET, ip,
                   &server_addr.sin_addr) != 1) {
         fprintf(stderr, "Endereco IPv4 invalido.\n");
         close(sockfd);
@@ -195,4 +189,23 @@ int main(int argc, char *argv[]) {
     printf("Cliente encerrado.\n");
 
     return EXIT_SUCCESS;
+}
+
+int main(int argc, char *argv[]) {
+    ClientConfigResult cfg = bench_parse_client_args(argc, argv);
+
+    if (cfg.error != BENCH_OK) {
+        fprintf(stderr,
+                "Uso: %s <IP> <porta> "
+                "[--bench <segundos> [bloco] [nodelay 0|1] [sndbuf]]\n",
+                argv[0]);
+        return EXIT_FAILURE;
+    }
+
+    signal(SIGPIPE, SIG_IGN);
+
+    if (cfg.value.bench)
+        return bench_client_run(&cfg.value);
+
+    return run_chat_client(cfg.value.ip, cfg.value.port);
 }

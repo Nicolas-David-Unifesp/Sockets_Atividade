@@ -2,7 +2,7 @@ CC      ?= gcc
 CFLAGS  ?= -O2 -Wall -Wextra -std=gnu11
 LDLIBS  = -pthread
 
-.PHONY: all test clean
+.PHONY: all test test-integration report clean
 
 all: server client
 
@@ -17,6 +17,12 @@ tests/test_bench_core: tests/test_bench_core.c bench_core.c bench_core.h
 
 test: tests/test_bench_core
 	./tests/test_bench_core
+
+test-integration: all
+	python3 tests/test_bench_integration.py
+
+report:
+	python3 scripts/gerar_relatorio.py
 
 clean:
 	rm -f server client tests/test_bench_core

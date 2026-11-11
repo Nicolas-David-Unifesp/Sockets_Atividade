@@ -2,7 +2,7 @@
 
 Aplicação de chat TCP (servidor multithread + cliente) com um **Modo Benchmark** adicional para medir a capacidade máxima de transmissão dos clientes para o servidor, de 1 a 10 clientes simultâneos.
 
-Os critérios de aceite e o que ainda falta no projeto estão em [`SPEC.md`](SPEC.md).
+Os critérios de aceite estão em [`Especificacao.md`](Especificacao.md).
 
 ## Compilar e rodar
 
@@ -77,11 +77,25 @@ for i in $(seq 4); do ./client <IP_DO_SERVIDOR> 5000 --bench 10 & done; wait
   - `bench_parse_long`, `bench_parse_server_args`, `bench_parse_client_args`: validação de argumentos e limites.
   - `bench_total_bytes`, `bench_window_ns`, `bench_mbps`: agregação e cálculo da TaxaAgregada.
   - `bench_format_report`: linha CSV.
-- **Imperative Shell**, em `bench_server.c` e `bench_client.c`: sockets, threads, relógio e impressão. Segue o fluxo *gather* (aceitar conexões, ler o relógio, receber bytes) → *decide* (o núcleo calcula) → *act* (imprimir). Por ser I/O, essa parte é validada pelo próprio experimento, conforme o CA6 do `SPEC.md`.
+- **Imperative Shell**, em `bench_server.c` e `bench_client.c`: sockets, threads, relógio e impressão. Segue o fluxo *gather* (aceitar conexões, ler o relógio, receber bytes) → *decide* (o núcleo calcula) → *act* (imprimir). Por ser I/O, essa parte é validada pelo próprio experimento, conforme o CA6 de `Especificacao.md`.
 
 ---
 
-## Resultados (Em breve)
+## Resultados e relatório
+
+O [relatório analítico](RELATORIO.md) apresenta a validação dos critérios de aceite,
+as 30 medições (1 a 10 clientes, três rodadas de 10 segundos), os gráficos e as
+limitações do experimento em loopback. Os dados brutos e logs estão em
+[`resultados/`](resultados/).
+
+```sh
+make test              # testes unitários de CA1–CA5
+make test-integration  # barreira GO, agregação exata e encerramento (CA6)
+make report            # valida o CSV e regenera resumo, gráficos e relatório
+```
+
+Os testes de integração e o benchmark precisam de permissão para abrir sockets
+TCP locais. A geração do relatório usa Python 3, sem pacotes externos.
 
 
 ## Arquivos

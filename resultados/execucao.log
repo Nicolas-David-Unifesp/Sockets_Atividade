@@ -1,0 +1,46 @@
+Config: dur=10s bloco=131072B nodelay=0 sndbuf=0 rcvbuf=0 reps=3
+  n=1 rodada=1 -> 42829.99 Mbps
+  n=1 rodada=2 -> 42859.16 Mbps
+  n=1 rodada=3 -> 42522.32 Mbps
+  n=2 rodada=1 -> 42746.91 Mbps
+  n=2 rodada=2 -> 46330.86 Mbps
+  n=2 rodada=3 -> 48264.03 Mbps
+  n=3 rodada=1 -> 48798.29 Mbps
+  n=3 rodada=2 -> 50721.73 Mbps
+  n=3 rodada=3 -> 49305.64 Mbps
+  n=4 rodada=1 -> 46847.68 Mbps
+  n=4 rodada=2 -> 48097.36 Mbps
+  n=4 rodada=3 -> 45288.14 Mbps
+  n=5 rodada=1 -> 47504.19 Mbps
+  n=5 rodada=2 -> 44308.83 Mbps
+  n=5 rodada=3 -> 43334.67 Mbps
+  n=6 rodada=1 -> 46141.02 Mbps
+  n=6 rodada=2 -> 47510.50 Mbps
+  n=6 rodada=3 -> 45627.13 Mbps
+  n=7 rodada=1 -> 48437.83 Mbps
+  n=7 rodada=2 -> 45502.16 Mbps
+  n=7 rodada=3 -> 44475.24 Mbps
+  n=8 rodada=1 -> 46377.13 Mbps
+  n=8 rodada=2 -> 47642.52 Mbps
+  n=8 rodada=3 -> 46768.03 Mbps
+  n=9 rodada=1 -> 49014.22 Mbps
+  n=9 rodada=2 -> 48949.75 Mbps
+  n=9 rodada=3 -> 47074.83 Mbps
+  n=10 rodada=1 -> 48468.64 Mbps
+  n=10 rodada=2 -> 49963.96 Mbps
+  n=10 rodada=3 -> 49271.41 Mbps
+
+Resumo (TaxaAgregada em Mbps):
+clientes         media          min          max
+1              42737.2      42522.3      42859.2
+2              45780.6      42746.9      48264.0
+3              49608.6      48798.3      50721.7
+4              46744.4      45288.1      48097.4
+5              45049.2      43334.7      47504.2
+6              46426.2      45627.1      47510.5
+7              46138.4      44475.2      48437.8
+8              46929.2      46377.1      47642.5
+9              48346.3      47074.8      49014.2
+10             49234.7      48468.6      49964.0
+
+CSV salvo em resultados/resultados.csv

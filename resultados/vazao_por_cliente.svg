@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="460" viewBox="0 0 900 460">
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="sans-serif" fill="#182333">
+<text x="450" y="28" text-anchor="middle" font-size="19">Vazão agregada dividida pelo número de clientes</text>
+<text x="85" y="50" font-size="12">Gbps por cliente (média derivada); média e intervalo mínimo–máximo (3 rodadas)</text>
+<path d="M85,375.0h770" stroke="#dde3ea"/>
+<text x="75" y="379.0" text-anchor="end" font-size="12">0.0</text>
+<path d="M85,313.0h770" stroke="#dde3ea"/>
+<text x="75" y="317.0" text-anchor="end" font-size="12">9.6</text>
+<path d="M85,251.0h770" stroke="#dde3ea"/>
+<text x="75" y="255.0" text-anchor="end" font-size="12">19.2</text>
+<path d="M85,188.99999999999997h770" stroke="#dde3ea"/>
+<text x="75" y="192.99999999999997" text-anchor="end" font-size="12">28.8</text>
+<path d="M85,126.99999999999999h770" stroke="#dde3ea"/>
+<text x="75" y="131.0" text-anchor="end" font-size="12">38.4</text>
+<path d="M85,65.0h770" stroke="#dde3ea"/>
+<text x="75" y="69.0" text-anchor="end" font-size="12">48.0</text>
+<path d="M85.0,100.38960832910132V98.21428571428574 M80.0,100.38960832910132h10 M80.0,98.21428571428574h10" stroke="#1769aa" stroke-width="2"/>
+<circle cx="85.0" cy="99.00218682485126" r="4" fill="#1769aa"/>
+<text x="85.0" y="398" text-anchor="middle" font-size="12">1</text>
+<path d="M170.55555555555554,236.96959975583815V219.15473824198676 M165.55555555555554,236.96959975583815h10 M165.55555555555554,219.15473824198676h10" stroke="#1769aa" stroke-width="2"/>
+<circle cx="170.55555555555554" cy="227.1737701878832" r="4" fill="#1769aa"/>
+<text x="170.55555555555554" y="398" text-anchor="middle" font-size="12">2</text>
+<path d="M256.1111111111111,269.95306990328766V265.8125258960033 M251.1111111111111,269.95306990328766h10 M251.1111111111111,265.8125258960033h10" stroke="#1769aa" stroke-width="2"/>
+<circle cx="256.1111111111111" cy="268.2088351004576" r="4" fill="#1769aa"/>
+<text x="256.1111111111111" y="398" text-anchor="middle" font-size="12">3</text>
+<path d="M341.6666666666667,301.8819653804961V297.34645905999355 M336.6666666666667,301.8819653804961h10 M336.6666666666667,297.34645905999355h10" stroke="#1769aa" stroke-width="2"/>
+<circle cx="341.6666666666667" cy="299.5308336793171" r="4" fill="#1769aa"/>
+<text x="341.6666666666667" y="398" text-anchor="middle" font-size="12">4</text>
+<path d="M427.22222222222223,319.02868563319623V313.64330910491816 M422.22222222222223,319.02868563319623h10 M422.22222222222223,313.64330910491816h10" stroke="#1769aa" stroke-width="2"/>
+<circle cx="427.22222222222223" cy="316.8141498640131" r="4" fill="#1769aa"/>
+<text x="427.22222222222223" y="398" text-anchor="middle" font-size="12">5</text>
+<path d="M512.7777777777778,325.8897756906686V323.862632559872 M507.7777777777778,325.8897756906686h10 M507.7777777777778,323.862632559872h10" stroke="#1769aa" stroke-width="2"/>
+<circle cx="512.7777777777778" cy="325.0296881628623" r="4" fill="#1769aa"/>
+<text x="512.7777777777778" y="398" text-anchor="middle" font-size="12">6</text>
+<path d="M598.3333333333334,333.96822765732304V330.312438711218 M593.3333333333334,333.96822765732304h10 M593.3333333333334,330.312438711218h10" stroke="#1769aa" stroke-width="2"/>
+<circle cx="598.3333333333334" cy="332.4338275549926" r="4" fill="#1769aa"/>
+<text x="598.3333333333334" y="398" text-anchor="middle" font-size="12">7</text>
+<path d="M683.8888888888889,337.5618915140561V336.5404007901362 M678.8888888888889,337.5618915140561h10 M678.8888888888889,336.5404007901362h10" stroke="#1769aa" stroke-width="2"/>
+<circle cx="683.8888888888889" cy="337.11620945263064" r="4" fill="#1769aa"/>
+<text x="683.8888888888889" y="398" text-anchor="middle" font-size="12">8</text>
+<path d="M769.4444444444445,341.2210405574689V339.82941415853657 M764.4444444444445,341.2210405574689h10 M764.4444444444445,339.82941415853657h10" stroke="#1769aa" stroke-width="2"/>
+<circle cx="769.4444444444445" cy="340.3087099638782" r="4" fill="#1769aa"/>
+<text x="769.4444444444445" y="398" text-anchor="middle" font-size="12">9</text>
+<path d="M855.0,343.69880990934695V342.733127860782 M850.0,343.69880990934695h10 M850.0,342.733127860782h10" stroke="#1769aa" stroke-width="2"/>
+<circle cx="855.0" cy="343.2041054851018" r="4" fill="#1769aa"/>
+<text x="855.0" y="398" text-anchor="middle" font-size="12">10</text>
+<polyline points="85.0,99.00218682485126 170.55555555555554,227.1737701878832 256.1111111111111,268.2088351004576 341.6666666666667,299.5308336793171 427.22222222222223,316.8141498640131 512.7777777777778,325.0296881628623 598.3333333333334,332.4338275549926 683.8888888888889,337.11620945263064 769.4444444444445,340.3087099638782 855.0,343.2041054851018" fill="none" stroke="#1769aa" stroke-width="2"/>
+<text x="470" y="435" text-anchor="middle">Clientes simultâneos</text></g></svg>
